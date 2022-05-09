@@ -3,7 +3,7 @@
 get_rhs <- function(x, which = 1, to.formula = FALSE) {
   # Coercing to formula can be useful, otherwise it's a call object
   if (to.formula == TRUE) {
-    as.formula(paste("~", deparse(attr(x, "rhs")[[which]])))
+    as.formula(paste("~", deparse1(attr(x, "rhs")[[which]], collapse = "")))
   } else {
     attr(x, "rhs")[[which]]
   }
